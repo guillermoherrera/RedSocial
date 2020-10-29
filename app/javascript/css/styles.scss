@@ -16,6 +16,12 @@ html, body{
     padding: 2em 1.5em;
 }
 
+.main-background{
+    background-image: url('~background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 $colors :(
     red       : #FC4349,
     pink      : #E4004F,
