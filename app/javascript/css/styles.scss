@@ -1,1 +1,38 @@
 @import '~bootstrap/scss/bootstrap';
+
+html, body{
+    height: 100%;
+}
+
+.full-height{
+    height: 100%;
+}
+
+.no-margin{
+    margin: 0;
+}
+
+.big-padding{
+    padding: 2em 1.5em;
+}
+
+$colors :(
+    red       : #FC4349,
+    pink      : #E4004F,
+    blue      : #2C3E50,
+    grey      : #D7DADB,
+    dark-grey : #666,
+    light-blue: #6DBCDB,
+    white     : #fff,
+    indigo    : #2F33AC,
+    black     : #000
+);
+
+@each $color-name, $color in $colors {
+    .#{$color-name}{
+        background-color: $color;
+    }
+    .#{$color-name}-text{
+        color: $color;
+    }
+}
