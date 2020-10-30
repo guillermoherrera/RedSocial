@@ -10,7 +10,7 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body id='main'>
+  <body id='main' style="<%=user_signed_in? ? 'margin-left: 250px;' : ''%>">
     <% if user_signed_in? %>
       <%= render 'partials/navbar' %>
     <% end %>
