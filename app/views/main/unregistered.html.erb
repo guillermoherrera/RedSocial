@@ -6,11 +6,9 @@
         <p class="no-margin">
             Conecta y conoce a otros alumnos de la comunidad de esta Red Social
         </p>
-        <div class="top-space text-center ">
-            Aqui va el login
-        </div>
-        <div class="large-padding text-center">
-            <%= link_to "Crear cuenta", new_user_registration_path %>
+        <br>
+        <div class="top-space">
+            <%= render 'devise/sessions/new' %>
         </div>
     </div>
 </div>
