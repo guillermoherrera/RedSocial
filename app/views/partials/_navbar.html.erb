@@ -1,0 +1,58 @@
+<nav class="navbar navbar-expand-lg navbar-light black">
+  <div>
+    <button class="openbtn" onclick="openNav()">☰</button>  
+  </div>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#"><span class="white-text">Home</span><span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#"><span class="white-text">Link</span></a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <span class="white-text">Dropdown</span>
+        </a>
+        <div class="dropdown-menu indigo" aria-labelledby="navbarDropdown">
+          <a class="white-text dropdown-item" href="#">Action</a>
+          <a class="white-text dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="white-text dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#"><span class="white-text">Disabled</span></a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+        <% if user_signed_in? %>
+            <%= link_to 'Cerrar Sesión', destroy_user_session_path, method: :delete , class: 'nav-link white-text' %>
+        <% end %>
+    </form>
+  </div>
+</nav>
+
+<div id="mySidebar" class="sidebar">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+  <a href="#">About</a>
+  <a href="#">Services</a>
+  <a href="#">Clients</a>
+  <a href="#">Contact</a>
+</div>
+
+<script>
+    function openNav() {
+    document.getElementById("mySidebar").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+    }
+
+    function closeNav() {
+    document.getElementById("mySidebar").style.width = "0";
+    document.getElementById("main").style.marginLeft= "0";
+    }
+</script>

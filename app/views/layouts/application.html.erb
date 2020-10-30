@@ -10,13 +10,11 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <% if notice %>
-      <p class="alert alert-primary no-margin"><%= notice %></p>
+  <body id='main'>
+    <% if user_signed_in? %>
+      <%= render 'partials/navbar' %>
     <% end %>
-    <% if alert %>
-      <p class="alert alert-danger no-margin"><%= alert %></p>
-    <% end %>
+    <%= render 'partials/notice' %>
     <%= yield %>
   </body>
 </html>
