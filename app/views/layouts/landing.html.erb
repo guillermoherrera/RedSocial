@@ -11,12 +11,7 @@
   </head>
 
   <body>
-    <% if notice %>
-      <p class="alert alert-primary no-margin"><%= notice %></p>
-    <% end %>
-    <% if alert %>
-      <p class="alert alert-danger no-margin"><%= alert %></p>
-    <% end %>
+    <%= render 'partials/notice' %>
     <%= yield %>
   </body>
 </html>

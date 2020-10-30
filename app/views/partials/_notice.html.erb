@@ -1,6 +1,19 @@
-<% if notice %>
-    <p class="alert alert-primary no-margin"><%= notice %></p>
+<% flash.each do |key, value| %>
+  <% alert_class = case key
+                   when "notice" then "primary"
+                   when "alert" then "danger"
+                   else key
+                   end %>
+  <%= content_tag :div, id: 'flash', class: "alert alert-#{alert_class} no-margin", style: "position:absolute;right: 0px;;opacity:0.9;margin:1em;" do %>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <%= value %>
+  <% end %>
 <% end %>
-<% if alert %>
-    <p class="alert alert-danger no-margin"><%= alert %></p>
-<% end %>
+
+<script>
+    $('document').ready(function() {
+        setTimeout(function() {
+            $('#flash').slideUp();
+        }, 3000);
+    });
+</script>
