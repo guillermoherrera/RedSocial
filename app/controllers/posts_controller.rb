@@ -29,10 +29,12 @@ class PostsController < ApplicationController
     @post.status = 1
     respond_to do |format|
       if @post.save
-        format.html { redirect_to @post, notice: 'Post was successfully created.' }
+        #format.html { redirect_to @post, notice: 'Post was successfully created.' }
+        format.js {render "show.js.erb"}
         format.json { render :show, status: :created, location: @post }
       else
-        format.html { render :new }
+        #format.html { render :new }
+        format.js {render "show.js.erb"}
         format.json { render json: @post.errors, status: :unprocessable_entity }
       end
     end
