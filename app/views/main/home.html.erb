@@ -8,8 +8,12 @@
         </div>
         <div class="col-sm-12 col-lg-10">
             <div id="postsError"></div>
-            <%= render 'posts/form', post: @post %>
-            <div id="posts"></div>
+            <div class="white large-padding">
+                <%= render 'posts/form', post: @post %>
+            </div>
+            <div id="posts">
+                <%= render @posts %>
+            </div>
         </div>
     </div>
 </div>

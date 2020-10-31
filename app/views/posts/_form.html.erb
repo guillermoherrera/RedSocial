@@ -12,12 +12,12 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :titulo %>
+    <%= form.label :titulo, "TITULO" %>
     <%= form.text_field :titulo, class: 'form-control', :required => true %>
   </div>
 
   <div>
-    <%=form.label :contenido, "Contenido"%>
+    <%=form.label :contenido, "CONTENIDO"%>
     <%=form.rich_text_area :contenido, :required => true%>
   </div>
   <br>

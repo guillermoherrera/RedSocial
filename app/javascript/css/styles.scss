@@ -20,6 +20,10 @@ html, body{
     padding: 2em 1.5em;
 }
 
+.large-padding{
+    padding: 10px 15px;
+}
+
 .big-margin{
     margin: 2em;
 }
@@ -75,6 +79,7 @@ $colors :(
 //sidebar navbar
 body {
     font-family: "Lato", sans-serif;
+    background-color: #eee;
 }
 
 .mySidebar{

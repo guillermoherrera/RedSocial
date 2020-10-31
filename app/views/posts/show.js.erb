@@ -1,5 +1,5 @@
 <%if @post.errors.count > 0  %>
     $("#postsError").html("<%= j render @post %>")
 <% else %>
-    $("#posts").append("<%= j render @post %>")
+    $("#posts").prepend("<%= j render @post %>")
 <% end %>
