@@ -20,6 +20,14 @@ html, body{
     padding: 2em 1.5em;
 }
 
+.big-margin{
+    margin: 2em;
+}
+
+.medium-margin{
+    margin: 1em;
+}
+
 .main-background{
     background-image: url('~background.jpg');
     background-size: cover;
@@ -30,6 +38,13 @@ html, body{
     text-decoration: underline;
 }
 
+.top-space{
+    margin-top: 1em;
+}
+
+.remove-bullet-points{
+    list-style-type: none;
+}
 
 //colores
 $colors :(

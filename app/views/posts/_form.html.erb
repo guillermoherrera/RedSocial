@@ -13,25 +13,15 @@
 
   <div class="field">
     <%= form.label :titulo %>
-    <%= form.text_field :titulo %>
-  </div>
-
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id %>
+    <%= form.text_field :titulo, class: 'form-control', :required => true %>
   </div>
 
   <div>
     <%=form.label :contenido, "Contenido"%>
-    <%=form.rich_text_area :contenido%>
+    <%=form.rich_text_area :contenido, :required => true%>
   </div>
-
-  <div class="field">
-    <%= form.label :status %>
-    <%= form.number_field :status %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
+  <br>
+  <div class="actions text-right">
+    <%= form.submit "Pubicar", class: 'btn btn-primary' %>
   </div>
 <% end %>
