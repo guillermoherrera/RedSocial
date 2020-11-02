@@ -4,6 +4,7 @@
             <article class="white-text large-padding blue">
                 <%#  current_user.cover.attached?%>
                 <div class="big-padding white-text text-left cover" style="background-image:  url(<%=current_user.cover.attached? ? current_user.cover : '/missing_cover.jpg'%>);">
+                    <%= circle_img  current_user.avatar.attached? ? current_user.avatar : '/minion.jpg', 100 %>
                 </div>
                 <div class="text-center border-bottom">
                     <%= @user.email %>
