@@ -2,8 +2,13 @@
     <div class="d-flex justify-content-center align-items-center">
         <div class="col-sm-12 col-lg-10">
             <article class="white-text large-padding blue">
-                <div class="big-padding white-text text-left cover" style="background-image:  url(<%=@user.cover.attached? ? url_for(@user.cover) : '/missing_cover.jpg'%>);">
-                    <%= circle_img  @user.avatar.attached? ? url_for(@user.avatar) : '/minion.jpg', 100 %>
+                <div id="user-cover" class="big-padding white-text text-left cover relative" style="background-image:  url(<%=@user.cover.attached? ? url_for(@user.cover) : '/missing_cover.jpg'%>);">
+                    <% if @its_me %>
+                        <%= render 'menu_avatar' %>
+                    <% end %>
+                    <div id="user-avatar">
+                        <%= circle_img  @user.avatar.attached? ? url_for(@user.avatar) : '/minion.jpg', 100 %>
+                    </div>
                 </div>
                 <div class="text-center border-bottom">
                     <%= @user.email %>
@@ -20,17 +25,19 @@
             
             <% if @its_me %>
                 <div>
+                    <%= form_for(@user, remote: true) do |f| %>
+                        <div style="display:none">
+                            <%= f.file_field :avatar, class: 'form-control remotipart', for:"#submitAvatar" %>
+                            <%= f.submit "Actualizar", id: "submitAvatar", class: 'btn btn-primary' %>
+                        </div>
+                    <% end %>
+                    <%= form_for(@user, remote: true) do |f| %>
+                        <div style="display:none">
+                            <%= f.file_field :cover, class: 'form-control remotipart', for:"#submitCover" %>  
+                            <%= f.submit "Actualizar", id: "submitCover", class: 'btn btn-primary' %>      
+                        </div>
+                    <% end %>
                     <%= form_for(@user) do |f| %>
-                        <div class="field">
-                            <div class="input-group">
-                            <span class="icon-background"><i class="fas fa-user-tag"></i></span>
-                            <%= f.file_field :avatar, class: 'form-control' %>
-                        </div>
-                        <div class="field">
-                            <div class="input-group">
-                            <span class="icon-background"><i class="fas fa-images"></i></span>
-                            <%= f.file_field :cover, class: 'form-control' %>
-                        </div>
                         <div class="field">
                             <div class="input-group">
                             <span class="icon-background"><i class="fas fa-signature"></i></span>

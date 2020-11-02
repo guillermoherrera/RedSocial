@@ -2,6 +2,7 @@ class UsuariosController < ApplicationController
     before_action :set_user
     before_action :authenticate_user!, only: [:update]
     before_action :authenticate_owner!, only: [:update]
+    skip_before_action :verify_authenticity_token, only:[:update]
 
     def show
         @its_me = @user == current_user
@@ -10,9 +11,11 @@ class UsuariosController < ApplicationController
     def update
         respond_to do |format|
             if @user.update(user_params)
-                format.html {redirect_to @user, notice: "Usuario Actualizado"}
+                format.html {redirect_to @user, notice: "Información de usuario Actualizada"}
+                format.js
             else
                 format.html {redirect_to @user, alert: "#{@user.errors.full_messages[0]}"}
+                format.js
             end
         end
     end
@@ -30,6 +33,6 @@ class UsuariosController < ApplicationController
     end
 
     def user_params
-        params.require(:user).permit(:nombre, :apeellido, :bio, :avatar, :cover)
+        params.require(:user).permit(:nombre, :apellido, :bio, :avatar, :cover)
     end
 end

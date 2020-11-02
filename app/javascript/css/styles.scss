@@ -74,6 +74,18 @@ html, body{
     border-radius: 50%;
 }
 
+.absolute{
+    position: absolute;
+}
+
+.relative{
+    position: relative;
+}
+
+.remotipart{
+    display: none;
+}
+
 //colores
 $colors :(
     red       : #FC4349,

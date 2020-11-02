@@ -1,0 +1,9 @@
+$("#user-avatar .circle-avatar").css({
+    "background-image": "url(<%= url_for(@user.avatar) %>)",
+    "background-size": "cover"
+})
+$("#user-cover").css({
+    "background-image": "url(<%= url_for(@user.cover) %>)",
+    "background-size": "cover",
+    "background-position": "center"
+})

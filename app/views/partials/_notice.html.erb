@@ -4,7 +4,7 @@
                    when "alert" then "danger"
                    else key
                    end %>
-  <%= content_tag :div, id: 'flash', class: "alert alert-#{alert_class} no-margin", style: "position:absolute;right: 0px;;opacity:0.9;margin:1em;" do %>
+  <%= content_tag :div, id: 'flash', class: "alert alert-#{alert_class} no-margin", style: "z-index: 1;position:absolute;right: 0px;;opacity:0.9;margin:1em;" do %>
     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
     <%= value %>
   <% end %>

@@ -1,0 +1,25 @@
+<div class="absolute" style="top:10px; right:10px">
+    <a class="nav-link btn bg-transparent" href="#" id="navbarDropdownMenu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <span><i class="fas fa-ellipsis-v white-text"></i></span>
+    </a>
+    <div class="dropdown-menu white" aria-labelledby="navbarDropdownMenu">
+        <li class="dropdown-item file-activate" for="#user_avatar">Actualizar Avatar</li>
+        <div class="dropdown-divider"></div>
+        <li class="dropdown-item file-activate" for="#user_cover">Actualizar Cover</li>
+    </div>
+</div>
+
+<script>
+    $( ".file-activate" ).click(function() {
+        selector = $(this).attr("for");
+        $(selector).click()
+    });
+
+    $(document).ready(function() { 
+        $('.remotipart').change(function() { 
+            selector = $(this).attr("for");
+            $(selector).click()
+            //$(this).parent().submit()
+        }); 
+    });
+</script>
