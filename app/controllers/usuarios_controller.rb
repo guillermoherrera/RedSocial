@@ -1,8 +1,10 @@
 class UsuariosController < ApplicationController
     before_action :set_user
+    before_action :authenticate_user!, only: [:update]
+    before_action :authenticate_owner!, only: [:update]
 
     def show
-        
+        @its_me = @user == current_user
     end
 
     def update
@@ -19,6 +21,12 @@ class UsuariosController < ApplicationController
     
     def set_user
         @user = User.find(params[:id])
+    end
+
+    def authenticate_owner!
+        if @user != current_user
+            redirect_to root_path, alert:"Accion no valida", status: :unauthorized
+        end
     end
 
     def user_params

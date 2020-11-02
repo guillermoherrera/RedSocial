@@ -30,6 +30,7 @@
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
+        <label class="white-text"> <%= current_user.email %></label>
         <% if user_signed_in? %>
             <%= link_to 'Cerrar Sesión', destroy_user_session_path, method: :delete , class: 'nav-link light-blue-text' %>
         <% end %>
@@ -39,7 +40,7 @@
 
 <div id="mySidebar" class="sidebar">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-  <a href="#">About</a>
+  <a href="<%=user_path(current_user)%>">Mi perfil</a>
   <a href="#">Services</a>
   <a href="#">Clients</a>
   <a href="#">Contact</a>

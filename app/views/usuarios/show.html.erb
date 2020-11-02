@@ -14,30 +14,35 @@
                     </div>
                 </div>
             </article>
-            <%= form_for(@user) do |f| %>
-                <div class="field">
-                    <div class="input-group">
-                    <span class="icon-background"><i class="fas fa-heading"></i></span>
-                    <%= f.text_field :nombre, class: 'form-control' %>
-                    </div>
-                </div>
-                <div class="field">
-                    <div class="input-group">
-                    <span class="icon-background"><i class="fas fa-heading"></i></span>
-                    <%= f.text_field :apellido, class: 'form-control' %>
-                    </div>
-                </div>
-                <div class="field">
-                    <div class="input-group">
-                    <span class="icon-background"><i class="fas fa-heading"></i></span>
-                    <%= f.text_area :bio, class: 'form-control' %>
-                    </div>
-                </div>
-                <br>
-                <div class="actions text-center">
-                    <%= f.submit "Actualizar", class: 'btn btn-primary' %>
-                </div>
-            <% end %>          
+            
+            <% if @its_me %>
+                <div>
+                    <%= form_for(@user) do |f| %>
+                        <div class="field">
+                            <div class="input-group">
+                            <span class="icon-background"><i class="fas fa-heading"></i></span>
+                            <%= f.text_field :nombre, class: 'form-control' %>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="input-group">
+                            <span class="icon-background"><i class="fas fa-heading"></i></span>
+                            <%= f.text_field :apellido, class: 'form-control' %>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="input-group">
+                            <span class="icon-background"><i class="fas fa-heading"></i></span>
+                            <%= f.text_area :bio, class: 'form-control' %>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="actions text-center">
+                            <%= f.submit "Actualizar", class: 'btn btn-primary' %>
+                        </div>
+                    <% end %>
+                </div>          
+            <% end %>
         </div>
     </div>
 </div>
