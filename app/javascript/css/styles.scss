@@ -51,6 +51,20 @@ html, body{
     list-style-type: none;
 }
 
+.medium{
+    font-size: 1.5em;
+}
+
+.border-bottom{
+    border-bottom: 1px solid currentColor;
+}
+
+.icon-background{
+    background-color: lightgray; 
+    padding: 3px;
+    margin: 3px;
+}
+
 //colores
 $colors :(
     red       : #FC4349,

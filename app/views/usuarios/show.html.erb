@@ -1,0 +1,43 @@
+<div class="no-padding big-margin" >
+    <div class="d-flex justify-content-center align-items-center">
+        <div class="col-sm-12 col-lg-10">
+            <article id="errorMessage" class="white-text large-padding blue">
+                <div class="text-center border-bottom">
+                    <%= @user.email %>
+                </div>
+                <div class="d-flex justify-content-around">
+                    <div>
+                        Seguidores
+                    </div>
+                    <div>
+                        <%= @user.posts.count %> Post
+                    </div>
+                </div>
+            </article>
+            <%= form_for(@user) do |f| %>
+                <div class="field">
+                    <div class="input-group">
+                    <span class="icon-background"><i class="fas fa-heading"></i></span>
+                    <%= f.text_field :nombre, class: 'form-control' %>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="input-group">
+                    <span class="icon-background"><i class="fas fa-heading"></i></span>
+                    <%= f.text_field :apellido, class: 'form-control' %>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="input-group">
+                    <span class="icon-background"><i class="fas fa-heading"></i></span>
+                    <%= f.text_area :bio, class: 'form-control' %>
+                    </div>
+                </div>
+                <br>
+                <div class="actions text-center">
+                    <%= f.submit "Actualizar", class: 'btn btn-primary' %>
+                </div>
+            <% end %>          
+        </div>
+    </div>
+</div>

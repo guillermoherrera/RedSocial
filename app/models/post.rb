@@ -3,5 +3,6 @@ class Post < ApplicationRecord
 
   has_rich_text :contenido
 
+  validates :titulo, presence: true
   validates :contenido, presence: true
 end

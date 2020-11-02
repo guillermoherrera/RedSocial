@@ -13,7 +13,10 @@
 
   <div class="field">
     <%= form.label :titulo, "TITULO" %>
-    <%= form.text_field :titulo, class: 'form-control', :required => true %>
+    <div class="input-group">
+      <span class="icon-background"><i class="fas fa-heading"></i></span>
+      <%= form.text_field :titulo, class: 'form-control', :required => true %>
+    </div>
   </div>
 
   <div>
