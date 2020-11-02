@@ -1,7 +1,10 @@
 <div class="no-padding big-margin" >
     <div class="d-flex justify-content-center align-items-center">
         <div class="col-sm-12 col-lg-10">
-            <article id="errorMessage" class="white-text large-padding blue">
+            <article class="white-text large-padding blue">
+                <%#  current_user.cover.attached?%>
+                <div class="big-padding white-text text-left cover" style="background-image:  url(<%=current_user.cover.attached? ? current_user.cover : '/missing_cover.jpg'%>);">
+                </div>
                 <div class="text-center border-bottom">
                     <%= @user.email %>
                 </div>
