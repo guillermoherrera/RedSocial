@@ -1,0 +1,9 @@
+var x = document.getElementById("snackbar");
+<% if @friendship.errors.count > 0 %>
+    var mensaje = '<%= "Error: #{@friendship.errors.full_messages[0]}"%>' 
+    x.innerHTML = mensaje;
+<% else %>
+    x.innerHTML = "Amistad Agregada";
+<% end %>
+x.className = "show";
+setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
