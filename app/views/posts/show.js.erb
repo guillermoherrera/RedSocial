@@ -2,4 +2,7 @@
     $("#postsError").html("<%= j render @post %>")
 <% else %>
     $("#posts").prepend("<%= j render @post %>")
+    $("#post_titulo").val("")
+    $("#post_contenido_trix_input_post").val("")
+    $("#post_contenido").html("");
 <% end %>

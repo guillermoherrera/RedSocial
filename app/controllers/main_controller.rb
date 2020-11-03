@@ -1,7 +1,7 @@
 class MainController < ApplicationController
   def home
     @post = Post.new
-    @posts = Post.all.reverse
+    @posts = Post.all_for_user(current_user).nuevos
   end
 
   def unregistered    
