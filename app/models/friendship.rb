@@ -17,4 +17,9 @@ class Friendship < ApplicationRecord
       transitions from: [:pending, :active], to: [:denied]
     end
   end
+
+  def self.friends?(user, friend)
+    return true if user == friend
+    Friendship.where(user: user, friend: friend).or(Friendship.where(user: friend, friend: user)).any?
+  end
 end

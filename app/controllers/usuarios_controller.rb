@@ -5,6 +5,7 @@ class UsuariosController < ApplicationController
     skip_before_action :verify_authenticity_token, only:[:update]
 
     def show
+        @are_friends = current_user.my_friend?(@user)
         @its_me = @user == current_user
     end
 

@@ -7,4 +7,8 @@ class User < ApplicationRecord
   has_many :posts
   has_one_attached :cover
   has_one_attached :avatar
+
+  def my_friend?(friend)
+    Friendship.friends?(self, friend)
+  end
 end
