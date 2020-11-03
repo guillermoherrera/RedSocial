@@ -1,6 +1,8 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    aasm (5.1.1)
+      concurrent-ruby (~> 1.0)
     actioncable (6.0.3.4)
       actionpack (= 6.0.3.4)
       nio4r (~> 2.0)
@@ -42,6 +44,10 @@ GEM
       globalid (>= 0.3.6)
     activemodel (6.0.3.4)
       activesupport (= 6.0.3.4)
+    activemodel-serializers-xml (1.0.2)
+      activemodel (> 5.x)
+      activesupport (> 5.x)
+      builder (~> 3.1)
     activerecord (6.0.3.4)
       activemodel (= 6.0.3.4)
       activesupport (= 6.0.3.4)
@@ -81,6 +87,12 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    draper (4.0.1)
+      actionpack (>= 5.0)
+      activemodel (>= 5.0)
+      activemodel-serializers-xml (>= 1.0)
+      activesupport (>= 5.0)
+      request_store (>= 1.0)
     erubi (1.9.0)
     ffi (1.13.1-x64-mingw32)
     globalid (0.4.2)
@@ -142,6 +154,8 @@ GEM
       thor (>= 0.20.3, < 2.0)
     rake (13.0.1)
     regexp_parser (1.8.2)
+    request_store (1.5.0)
+      rack (>= 1.4)
     responders (3.0.1)
       actionpack (>= 5.0)
       railties (>= 5.0)
@@ -203,10 +217,12 @@ PLATFORMS
   x64-mingw32
 
 DEPENDENCIES
+  aasm (~> 5.1, >= 5.1.1)
   bootsnap (>= 1.4.2)
   byebug
   capybara (>= 2.15)
   devise
+  draper (~> 4.0, >= 4.0.1)
   jbuilder (~> 2.7)
   puma (~> 4.1)
   rails (~> 6.0.3, >= 6.0.3.4)
