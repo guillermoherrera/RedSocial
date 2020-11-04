@@ -21,8 +21,7 @@ var post = consumer.subscriptions.create("PostChannel", {
     // Called when there's incoming data on the websocket for this channel
   },
 
-  echo(){
+  //echo(){
     //@perform "echo", {hola: "mundo"}
-    
-  }
+  //}
 });
