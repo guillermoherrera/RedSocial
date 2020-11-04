@@ -1,7 +1,7 @@
 
-<% if @post.errors.count > 0 %>
+<% if post.errors.count > 0 %>
     <article id="errorMessage" class="white-text large-padding pink">
-        <%= "Error: #{@post.errors.full_messages[0]}"%>
+        <%= "Error: #{post.errors.full_messages[0]}"%>
     </article>
 <% else %>
     <article class="large-padding white top-space shadow p-3 rounded">

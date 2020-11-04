@@ -1,8 +1,12 @@
 import consumer from "./consumer"
 
-consumer.subscriptions.create("PostChannel", {
+var post = consumer.subscriptions.create("PostChannel", {
   connected() {
     // Called when the subscription is ready for use on the server
+    console.log(this);
+    //this.perform("echo",{
+    //  hola: "mundo"
+    //})
   },
 
   disconnected() {
@@ -10,6 +14,15 @@ consumer.subscriptions.create("PostChannel", {
   },
 
   received(data) {
+    console.log(data)
+    if(data.action == 'new_post'){
+      $("#posts").prepend(data.message)
+    }
     // Called when there's incoming data on the websocket for this channel
+  },
+
+  echo(){
+    //@perform "echo", {hola: "mundo"}
+    
   }
 });

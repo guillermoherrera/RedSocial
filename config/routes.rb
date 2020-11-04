@@ -11,4 +11,6 @@ Rails.application.routes.draw do
   unauthenticated :user do
     root 'main#unregistered', as: :unregistered
   end
+
+  mount ActionCable.server => '/cable'
 end
